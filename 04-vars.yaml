@@ -1,16 +1,16 @@
 - name: variables
   hosts: web
-  vars:
-      COURSE: "Devops with aws"
-      DURATION: "120 HRS"
-      TRAINER: "Gopi"
+  # vars:
+  #     COURSE: "Devops with aws"
+  #     DURATION: "120 HRS"
+  #     TRAINER: "Gopi"
   tasks:
   - name: print the information
     ansible.builtin.debug:
      msg: " Hi i am learning {{COURSE}} , duration is {{DURATION}} , Trainer is {{TRAINER}}"
 
-  - name : print the information again
-    vars:
-        COURSE: "ansible"
-    ansible.builtin.debug:
-     msg: " Hi i am learning {{COURSE}} , duration is {{DURATION}} , Trainer is {{TRAINER}}"
+  # - name : print the information again
+  #   vars:
+  #       COURSE: "ansible"
+  #   ansible.builtin.debug:
+  #    msg: " Hi i am learning {{COURSE}} , duration is {{DURATION}} , Trainer is {{TRAINER}}"
