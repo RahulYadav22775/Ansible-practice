@@ -4,8 +4,16 @@
   #     COURSE: "Devops with aws"
   #     DURATION: "120 HRS"
   #     TRAINER: "Gopi"
-  vars_files:
-  -  05-vars-file.yaml
+  # vars_files:
+  # -  05-vars-file.yaml
+  vars_prompt:
+  - name: COURSE
+    prompt: please enter the course name
+  - name: TRAINER
+    prompt: please enter trainer name 
+  - name: DURATION
+    prompt: please enter duration
+    private: false
   tasks:
   - name: print the information
     ansible.builtin.debug:
