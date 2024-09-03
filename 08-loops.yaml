@@ -1,0 +1,6 @@
+- name: check node info
+  hosts: web
+  tasks:
+  - name: checking node server info
+    ansible.builtin.debug:
+     msg: " facts are  {{ansible_facts}}"
