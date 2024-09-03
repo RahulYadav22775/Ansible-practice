@@ -4,9 +4,10 @@
   become: yes
   tasks:
   - name: print names
-    ansible.builtin.debug:
-     msg: "{{item}}"
+    ansible.builtin.package:
+      name: "{{item}}"
+      state: present
     loop:
-    - ramesh
-    - suresh
-    - rakesh
+    - postfix
+    - mysql
+    - nginx
