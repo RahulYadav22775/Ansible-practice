@@ -1,7 +1,7 @@
 - name: variables
   hosts: web
   # vars:
-  #     COURSE: "Devops with aws"
+  #     COURSE: "Devops with aws" #play level variables
   #     DURATION: "120 HRS"
   #     TRAINER: "Gopi"
   # vars_files:
@@ -21,6 +21,6 @@
 
   # - name : print the information again
   #   vars:
-  #       COURSE: "ansible"
+  #       COURSE: "ansible"    #task level variable
   #   ansible.builtin.debug:
   #    msg: " Hi i am learning {{COURSE}} , duration is {{DURATION}} , Trainer is {{TRAINER}}"
