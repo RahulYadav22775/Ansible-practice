@@ -1,0 +1,15 @@
+- name: create a user
+  hosts: web
+  # vars:
+  #     USERNAME: expense #play level varible
+  # vars_prompt:          # varable given at rumtime by the user
+  # - name: USERNAME
+  #   prompt: please enter the username ::::   
+  # vars_files:           # Variables passing through a file
+  # - 05-vars-file.yaml
+  tasks:
+  - name: create expense user
+    ansible.builtin.command: id expense
+    register: USER      # here output of above command stored in USER variable
+    
+
