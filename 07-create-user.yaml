@@ -2,9 +2,10 @@
   hosts: web
   # vars:
   #     USERNAME: expense #play level varible
-  # vars_prompt:          # varable given at rumtime by the user
-  # - name: USERNAME
-  #   prompt: please enter the username ::::   
+  vars_prompt:          # varable given at rumtime by the user
+  - name: USERNAME
+    prompt: please enter the username ::::   
+    private: false
   # vars_files:           # Variables passing through a file
   # - 05-vars-file.yaml
   tasks:
