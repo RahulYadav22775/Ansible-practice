@@ -9,7 +9,8 @@
   # - 05-vars-file.yaml
   tasks:
   - name: create expense user
-    ansible.builtin.command: id expense
-    register: USER      # here output of above command stored in USER variable
+    ansible.builtin.command: id {{USERNAME}}
+    register: USER 
+    ignore_errors: true    # here output of above command stored in USER variable
     
 
