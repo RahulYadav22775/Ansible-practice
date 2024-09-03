@@ -1,5 +1,6 @@
 - name: create a user
   hosts: web
+  become: yes # it gives root access
   vars:
       USERNAME: expense #play level varible
   # vars_prompt:          # varable given at rumtime by the user
