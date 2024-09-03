@@ -1,5 +1,6 @@
 - name: check node info
   hosts: web
+  become: yes
   tasks:
   - name: checking node server info
     ansible.builtin.debug:
