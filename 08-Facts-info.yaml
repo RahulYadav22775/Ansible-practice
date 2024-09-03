@@ -4,3 +4,5 @@
   - name: checking node server info
     ansible.builtin.debug:
      msg: " facts are  {{ansible_facts}}"
+
+  
