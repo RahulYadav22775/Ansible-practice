@@ -3,7 +3,7 @@
   tasks:
   - name: checking node server info
     ansible.builtin.debug:
-     msg: " facts are  {{ansible_facts}}"
+     msg: " facts are  {{ansible_facts}} "
 
   - name: install nginx if redhat
     ansible.builtin.dnf:
