@@ -1,6 +1,6 @@
 - name: demo on filters / functions
   hosts: local
-  connections: local
+  connection: local
   tasks:
   - name: proving default variable using filter
     ansible.builtin.debug:
