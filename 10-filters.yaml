@@ -1,0 +1,43 @@
+- name: demo on filters / functions
+  hosts: local
+  connections: local
+  tasks:
+  - name: proving default variable using filter
+     ansible.builtin.debug:
+      msg: " course name :: {{COURSE | default('DEVOPS')}}"
+
+  - name: change to uppercase
+    vars:
+        COURSE: "Devops with AWS"
+    ansible.builtin.debug:
+     msg: " course  is {{COURSE | upper}}"
+
+  - name: change to lower case
+    vars:
+        COURSE: "Devops with AWS"
+    ansible.builtin.debug:
+     msg: "course is {{COURSE | lower}}"
+
+  - name: find unique values
+    vars:
+       NUMBERS: [1,5,2,1,7,2,1,5,8,5,7.2,1,3,4,4,3,6]
+    anisble.builtin.debug:
+     msg: " numbers are {{NUMBERS| unique}}"
+
+  - name: convert dictionary/map to list
+    vars:
+       tools:
+          cm: ansible
+          cloud: aws
+          script: shell
+          ci: jenkins
+    ansible.builtin.debug:
+     msg: " tools are converted to list {{tools | dict2items}}"
+    
+
+
+  
+
+
+  
+
