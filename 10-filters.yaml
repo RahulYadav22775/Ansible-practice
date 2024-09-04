@@ -4,7 +4,7 @@
   tasks:
   - name: proving default variable using filter
      ansible.builtin.debug:
-      msg: " course name :: {{COURSE | default('DEVOPS')}}"
+      msg: " course name :: {{ COURSE | default('DEVOPS') }}"
 
   - name: change to uppercase
     vars:
