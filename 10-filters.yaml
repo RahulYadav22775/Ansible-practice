@@ -21,7 +21,7 @@
   - name: find unique values
     vars:
        NUMBERS: [1,5,2,1,7,2,1,5,8,5,7.2,1,3,4,4,3,6]
-    anisble.builtin.debug:
+    ansible.builtin.debug:
      msg: " numbers are {{NUMBERS| unique}}"
 
   - name: convert dictionary/map to list
