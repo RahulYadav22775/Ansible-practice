@@ -54,7 +54,7 @@
 
   - name: check ip address
     vars:
-       ip: "172.31.92.114"
+       ip: "172.31.92.115"
     ansible.builtin.debug:
      msg: " {{ip| ansible.utils.ipv4 }}"
 
