@@ -42,7 +42,7 @@
      - {"key": "cloud" , "value": "aws"}
      - {"key": "ci" , "value": "jenkins"}
     ansible.builtin.debug:
-     msg: " converting list to map :: {{ course | item2dict }}"
+     msg: " converting list to map :: {{ course | items2dict }}"
 
   - name: check ip address
     vars:
