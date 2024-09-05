@@ -9,6 +9,7 @@
      - mysql
      - backend
      - frontend
+     zone: "gopi-81s.online"
   tasks:
 
   - name: installing boto3 and botocore 
@@ -32,4 +33,23 @@
   - name: check the output 
     ansible.builtin.debug:
      msg: "{{ ec2_instances }}"
+
+
+  - name: creating route 53 A record for private IP
+    amazon.aws.route53:
+      state: present
+      zone: "{{ zone }}"
+      record: "{{ item.item }}.{{ zone }}"
+      type: A
+      ttl: 1
+      value: "{{ item.instances[0].private_ip_address}}"
+      wait: true
+      overwrite: true
+    loop: "{{ ec2_instances.results}}"
+    register: dns
+
+  - name: check the output of dns
+    ansible.builtin.debug:
+     msg: "{{ dns }}"
+
     
