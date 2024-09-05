@@ -10,19 +10,19 @@
     vars:
         COURSE: "Devops with AWS"
     ansible.builtin.debug:
-     msg: " course  is {{COURSE | upper}}"
+     msg: " course  is {{ COURSE | upper }}"
 
   - name: change to lower case
     vars:
         COURSE: "Devops with AWS"
     ansible.builtin.debug:
-     msg: "course is {{COURSE | lower}}"
+     msg: "course is {{ COURSE | lower }}"
 
   - name: find unique values
     vars:
        NUMBERS: [1,5,2,1,7,2,1,5,8,5,7.2,1,3,4,4,3,6]
     ansible.builtin.debug:
-     msg: " numbers are {{NUMBERS| unique}}"
+     msg: " numbers are {{ NUMBERS| unique }}"
 
   - name: convert dictionary/map to list
     vars:
@@ -33,7 +33,22 @@
           ci: jenkins
     ansible.builtin.debug:
      msg: " tools are converted to list {{tools | dict2items}}"
+
     
+  - name: convert list to map/dictionary
+    vars:
+     course:
+     - {"key": "cm" , "value": "ansible"}
+     - {"key": "cloud" , "value": "aws"}
+     - {"key": "ci" , "value": "jenkins"}
+    ansible.builtin.debug:
+     msg: " converting list to map :: {{ course | item2dict }}"
+
+  - name: check ip address
+    vars:
+       ip: "172.31.92.114"
+    ansible.builtin.debug:
+     msg: " {{ip| ansible.utils.ipv4 }}"
 
 
   
