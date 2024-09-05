@@ -1,6 +1,7 @@
 - name: demo on filters / functions
   hosts: local
   connection: local
+  become: yes
   tasks:
   - name: proving default variable using filter
     ansible.builtin.debug:
@@ -43,6 +44,13 @@
      - {"key": "ci" , "value": "jenkins"}
     ansible.builtin.debug:
      msg: " converting list to map :: {{ course | items2dict }}"
+
+  - name: install python library netaddr
+    ansible.builtin.pip:
+      name: netaddr
+      state: present
+      executable: pip3.9
+
 
   - name: check ip address
     vars:
