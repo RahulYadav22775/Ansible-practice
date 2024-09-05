@@ -18,7 +18,7 @@
       - botocore
       state: present
       executable: pip3.9
-      
+
   - name: creating 3 instances
     amazon.aws.ec2_instance:
       name: "{{ item }}"
@@ -28,3 +28,8 @@
       image_id: "{{ ami_id }}"
     loop: "{{ instances }}"
     register: ec2_instances
+
+  - name: check the output 
+    ansible.builtin.debug:
+     msg: "{{ ec2_instances }}"
+    
