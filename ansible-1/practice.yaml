@@ -3,5 +3,5 @@
   tasks:
   - name: "{{ number }} is greater than 100 or not"
     ansible.builtin.debug:
-     msg: " {{ number | default ('120')} is greater than 100}"
+     msg: " {{ number | default (120)} is greater than 100}"
      when: number | int > 100
