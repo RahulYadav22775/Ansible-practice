@@ -17,9 +17,9 @@
 
   tasks:
   - name: print the info
-    vars:
-      course: "devops-task-level"
-      duration: "86hrs"
+    # vars:
+    #   course: "devops-task-level"
+    #   duration: "86hrs"
     ansible.builtin.debug:
       msg: " hi i am learing {{ course }}, duration is {{ duration }}"
 
