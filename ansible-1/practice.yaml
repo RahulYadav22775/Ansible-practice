@@ -1,7 +1,7 @@
 - name: filter/function examples
   hosts: web
   vars:
-    my_ip: "172.31.81.0"
+    my_ip: "155.31.81.255"
   tasks:
   - name: check ip address valid or not
     ansible.builtin.debug:
