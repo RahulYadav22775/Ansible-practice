@@ -1,16 +1,6 @@
-- name: create user
+- name: gathering info of servers
   hosts: web
-  become: yes
-  tasks: 
-  - name: create expense user
-    ansible.builtin.command: id expense
-    register: user_info
-    ignore_errors: true
-
-  - name: print the user info
+  tasks:
+  - name: print the info of given server
     ansible.builtin.debug:
-      msg: "user info is {{ user_info }}"
-
-  - name: create user expense
-    ansible.builtin.command: useradd expense
-    when: user_info.rc !=0
+      msg: " info is {{ ansible_facts }}"
