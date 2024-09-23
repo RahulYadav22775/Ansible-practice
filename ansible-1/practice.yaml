@@ -21,6 +21,6 @@
     vars: 
       list: [1,2,4,2,1,4,5,6,7,55,7,5,3,52,32,43,2,4,2,3]
     ansible.builtin.debug:
-     msg: " unique values are {{ list }} , min value is {{ list | min }} , max value is {{ list | max }}"
+     msg: " unique values are {{ list | unique }} , min value is {{ list | min }} , max value is {{ list | max }}"
 
      
