@@ -1,14 +1,14 @@
-- name: ping the server
+- name: print the msg-1
   hosts: web
   tasks:
-  - name: ping the server
+  - name:  print the msg-1
     ansible.builtin.debug:
      msg : "hi  i am learning devops with aws"
 
-- name: ping the server
+- name:  print the msg-2
   hosts: web
   tasks:
-  - name: ping the server
+  - name:  print the msg-2
     ansible.builtin.debug:
      msg : "hi  i am learning DEVOPS"
 
