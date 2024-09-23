@@ -1,7 +1,9 @@
 - name: check the given number is greater than 100 or not
   hosts: web
-  vars: 
-    number: 1
+  vars_prompt:
+  - name: number
+    prompt: please enter the given number
+    private: false
   tasks:
   - name: check {{ number }} is greater than 100 or not
     ansible.builtin.debug:
