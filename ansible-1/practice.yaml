@@ -1,13 +1,10 @@
-- name: check the given number is greater than 100 or not
+- name: create user
   hosts: web
-  # vars_prompt:
-  # - name: number
-  #   prompt: please enter the given number
-  #   private: false
-  tasks:
-  - name: check given is greater than 100 or not
+  tasks: 
+  - name: create expense user
+    ansible.builtin.command: id expense
+    register: user_info
+
+  - name: print the user info
     ansible.builtin.debug:
-      msg: " the {{ number | default '121' }} is greater than 100"
-    when: number | int  > 100
-  
-    
+      msg: "user info is {{ user_info }}"
