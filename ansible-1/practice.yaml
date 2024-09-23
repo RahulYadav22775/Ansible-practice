@@ -1,29 +1,11 @@
-- name: using variables to print the course info
+- name: check the given number is greater than 100 or not
   hosts: web
-  vars:
-     course: "devops with aws-vars"
-     duration: 120hrs
-     topics:
-     - linux commands
-     - shell script
-     - ansible
-     - terraform
-     - aws
-     - k8
-     tools:
-       ci: jenkins
-       cm: ansible
-       cloud: aws
-       aws:
-       - iam
-       - s3
-       - vpc
-     live: true
-
+  vars: 
+    number: 121
   tasks:
-  - name: print the info
+  - name: check {{ number }} is greater than 100 or not
     ansible.builtin.debug:
-      msg: " hi i am learing {{ course }}, duration is {{ duration }} , topics are {{ topics }} , tools are {{ tools }}, live is {{ live }}"
-
+      msg: " the {{ number }} is greater than 100"
+    when: number > 100
   
     
