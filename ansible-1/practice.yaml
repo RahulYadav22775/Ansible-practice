@@ -1,27 +1,9 @@
 - name: filter/function examples
   hosts: web
+  vars:
+    my_ip:
   tasks:
-  - name: course info
+  - name: check ip address valid or not
     ansible.builtin.debug:
-     msg: " course is {{ course | default ('devops')}}"
-
-  - name: convert dictionary to list/items
-    vars:
-      tools:
-        ci: jenkins
-        cm: ansible
-        infra: terraform
-        cloud: aws
-    ansible.builtin.debug:
-      msg: " {{ tools | dict2items }}"
-
-
-  - name: convert  list/items to ditionary/maps
-    vars:
-      tools:
-      - {'key': 'ci', 'value': 'jenkins'}
-      - {'key': 'cm', 'value': 'ansible'}
-      - {'key': 'infra', 'value': 'terraform'}
-      - {'key': 'cloud', 'value': 'aws'}
-    ansible.builtin.debug:
-      msg: " {{ tools | items2dict }}"
+      msg: "{{ my_ip | ansible.utils.ipv4 }}"
+    
