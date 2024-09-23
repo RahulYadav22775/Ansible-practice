@@ -3,5 +3,5 @@
   tasks:
   - name: course info
     ansible.builtin.debug:
-     msg: " {{ course | default ('course')} is greater than 100}"
+     msg: " course is {{ course | default ('devops')}}"
      
