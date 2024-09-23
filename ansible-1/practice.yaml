@@ -1,15 +1,16 @@
-- name: print the msg-1
+- name: install the nginx and run
   hosts: web
   tasks:
-  - name:  print the msg-1
-    ansible.builtin.debug:
-     msg : "hi  i am learning devops with aws"
+  - name: install nginx
+    ansible.builtin.package:
+      name: nginx
+      state: present
 
-- name:  print the msg-2
-  hosts: web
-  tasks:
-  - name:  print the msg-2
-    ansible.builtin.debug:
-     msg : "hi  i am learning DEVOPS"
+  - name: start and enable the nginx
+    ansible.builtin.service:
+      name: nginx
+      state: started
+      enabled: yes
+
 
     
