@@ -1,6 +1,19 @@
-- name: gathering info of servers
+- name: install nginx
   hosts: web
   tasks:
   - name: print the info of given server
     ansible.builtin.debug:
       msg: " info is {{ ansible_facts }}"
+  
+  - name: install nginx if redhat
+    ansible.builtin.dnf:
+     name: nginx
+     state: present
+    when: ansible_os_family == "RedHat"
+
+  - name: install nginx if debian
+    ansible.builtin.apt:
+     name: nginx
+     state: present
+    when: ansible_os_family == "Debian"  
+  
