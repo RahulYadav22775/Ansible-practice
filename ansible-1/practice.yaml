@@ -4,7 +4,12 @@
   - name: create expense user
     ansible.builtin.command: id expense
     register: user_info
+    ignore_errors: true
 
   - name: print the user info
     ansible.builtin.debug:
       msg: "user info is {{ user_info }}"
+
+  - name: create user expense
+    ansible.builtin.command: useradd expense
+    when: user_info.rc !=0

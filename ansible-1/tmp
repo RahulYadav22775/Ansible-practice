@@ -1,0 +1,11 @@
+ {"changed": true, 
+ "cmd": ["id", "expense"], 
+ "delta": "0:00:00.005109", 
+ "end": "2024-09-23 09:21:48.805469", 
+ "msg": "non-zero return code", 
+ "rc": 1, 
+ "start": "2024-09-23 09:21:48.800360", 
+ "stderr": "id: ‘expense’: no such user", 
+ "stderr_lines": ["id: ‘expense’: no such user"], 
+ "stdout": "", 
+ "stdout_lines": []}
