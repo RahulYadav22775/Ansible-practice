@@ -14,3 +14,14 @@
         cloud: aws
     ansible.builtin.debug:
       msg: " {{ tools | dict2items }}"
+
+
+  - name: convert  list/items to ditionary/maps
+    vars:
+      tools:
+      - {'key': 'ci', 'value': 'jenkins'},
+      - {'key': 'cm', 'value': 'ansible'}, 
+      - {'key': 'infra', 'value': 'terraform'},
+      - {'key': 'cloud', 'value': 'aws'}
+    ansible.builtin.debug:
+      msg: " {{ tools | dict2items }}"
