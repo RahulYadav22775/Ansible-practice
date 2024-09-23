@@ -8,6 +8,6 @@
   - name: check {{ number }} is greater than 100 or not
     ansible.builtin.debug:
       msg: " the {{ number }} is greater than 100"
-    when: number > 100
+    when: number | int  > 100
   
     
