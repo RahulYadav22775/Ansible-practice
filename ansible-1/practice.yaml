@@ -3,8 +3,13 @@
   # vars:
   #    course: "devops with aws"
   #    duration: 120hrs
-  vars_files:
-  - vars.yaml
+  # vars_files:
+  # - vars.yaml 
+  vars_prompt:
+  - name: course 
+    prompt: please enter the course name
+  - name: duration 
+    prompt: please enter the duration
   tasks:
   - name: print the info
     ansible.builtin.debug:
