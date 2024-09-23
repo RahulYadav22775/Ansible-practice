@@ -5,22 +5,12 @@
     ansible.builtin.debug:
      msg: " course is {{ course | default ('devops')}}"
 
-  - name: upper
+  - name: convert dictionary to list/items
     vars:
-       name: Ramesh   Kakana
+      tools:
+        ci: jenkins
+        cm: ansible
+        infra: terraform
+        cloud: aws
     ansible.builtin.debug:
-     msg: "name is {{ name | upper }}"
-     
-  - name: lower
-    vars:
-       name: Ramesh   Kakana
-    ansible.builtin.debug:
-     msg: "name is {{ name | lower }}"
-
-  - name: filter unique values 
-    vars: 
-      list: [1,2,4,2,1,4,5,6,7,55,7,5,3,52,32,43,2,4,2,3]
-    ansible.builtin.debug:
-     msg: " unique values are {{ list | unique }} , min value is {{ list | min }} , max value is {{ list | max }}"
-
-     
+      msg: " {{ tools | dict2items }}"
