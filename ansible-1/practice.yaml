@@ -24,4 +24,4 @@
       - {'key': 'infra', 'value': 'terraform'}
       - {'key': 'cloud', 'value': 'aws'}
     ansible.builtin.debug:
-      msg: " {{ tools | dict2items }}"
+      msg: " {{ tools | items2dict }}"
